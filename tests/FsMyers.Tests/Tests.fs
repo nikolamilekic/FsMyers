@@ -10,7 +10,7 @@ let stringToMyersList (s : string) =
     { new IMyersList<_> with member __.Count = charArray.Length
                              member __.Item with get(x) = charArray.[x] }
 let getStringDifferences a b = (stringToMyersList a, stringToMyersList b)
-                               |> Myers.Default.GetDiffs
+                               |> Myers.Default.GetDifferences
                                |> Async.RunSynchronously
 
 let insert i e (l : ResizeArray<_>) = l.Insert(i, e); l
