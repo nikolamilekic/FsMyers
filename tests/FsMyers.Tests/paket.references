@@ -1,0 +1,6 @@
+FSharp.Core
+group Test
+Expecto
+Expecto.FsCheck
+FsCheck
+Unquote

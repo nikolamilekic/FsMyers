@@ -1,0 +1,25 @@
+type project
+title
+    FsMyers
+owners
+    Nikola Milekic
+authors 
+    Nikola Milekic
+projectUrl
+    https://github.com/nikolamilekic/FsMyers
+iconUrl
+    https://raw.githubusercontent.com/nikolamilekic/FsMyers/master/docs/files/img/logo.png
+licenseUrl
+    https://github.com/nikolamilekic/FsMyers/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    difference algorithm myers fsharp
+summary
+    FSharp implementation of Eugene W. Myers's O(ND) difference algorithm
+description
+    FSharp implementation of Eugene W. Myers's O(ND) difference algorithm
+
+
