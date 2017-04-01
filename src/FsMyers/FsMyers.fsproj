@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>FsMyers</RootNamespace>
     <AssemblyName>FsMyers</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <Name>FsMyers</Name>
     <TargetFrameworkProfile />
@@ -60,11 +60,10 @@
   -->
   <Import Project="..\..\.paket\paket.targets" />
   <ItemGroup>
-    <Compile Include="Library.fs" />
-    <None Include="Script.fsx" />
     <None Include="paket.references" />
     <None Include="paket.template" />
     <Content Include="App.config" />
+    <Compile Include="Myers.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
