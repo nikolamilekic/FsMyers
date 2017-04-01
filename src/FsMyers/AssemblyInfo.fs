@@ -5,8 +5,8 @@ open System.Reflection
 [<assembly: AssemblyTitleAttribute("FsMyers")>]
 [<assembly: AssemblyProductAttribute("FsMyers")>]
 [<assembly: AssemblyDescriptionAttribute("FSharp implementation of Eugene W. Myers's O(ND) difference algorithm")>]
-[<assembly: AssemblyVersionAttribute("1.0")>]
-[<assembly: AssemblyFileVersionAttribute("1.0")>]
+[<assembly: AssemblyVersionAttribute("0.1")>]
+[<assembly: AssemblyFileVersionAttribute("0.1")>]
 [<assembly: AssemblyConfigurationAttribute("Release")>]
 do ()
 
@@ -14,6 +14,6 @@ module internal AssemblyVersionInformation =
     let [<Literal>] AssemblyTitle = "FsMyers"
     let [<Literal>] AssemblyProduct = "FsMyers"
     let [<Literal>] AssemblyDescription = "FSharp implementation of Eugene W. Myers's O(ND) difference algorithm"
-    let [<Literal>] AssemblyVersion = "1.0"
-    let [<Literal>] AssemblyFileVersion = "1.0"
+    let [<Literal>] AssemblyVersion = "0.1"
+    let [<Literal>] AssemblyFileVersion = "0.1"
     let [<Literal>] AssemblyConfiguration = "Release"
