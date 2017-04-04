@@ -3,6 +3,10 @@ namespace FsMyers
 open System.Threading
 
 type Difference<'a> = Insertion of int * 'a | Deletion of int
+module Difference =
+    let map f = function | Deletion x -> Deletion x
+                         | Insertion (i, element) -> Insertion (i, f element)
+
 type IMyersList<'a> = abstract member Count : int
                       abstract member Item : int -> 'a with get
 
