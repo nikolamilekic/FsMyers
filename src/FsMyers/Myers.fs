@@ -19,7 +19,11 @@ module Myers =
 
     let isEven x = x % 2 = 0
 
-    let getDifferences comparison (a : IMyersList<_>) (b : IMyersList<_>) = async {
+    let getDifferences
+        comparison
+        (a : IMyersList<_>)
+        (b : IMyersList<_>) = async {
+
         let vArrayLength = a.Count + b.Count + 1
         use buffers =
             new ThreadLocal<int[] * int[]>(
@@ -217,17 +221,8 @@ module Myers =
                |> List.toSeq
     }
 
-type MyersWithoutEquality<'a, 'b>(comparison : 'a * 'b -> bool) =
-    member __.GetDifferences(a, b) = Myers.getDifferences comparison a b
-
-type Myers< 'a when 'a : equality>(comparison) =
-    inherit MyersWithoutEquality<'a, 'a>(comparison)
-
-    static let d = (fun (x, y) -> x.Equals(y)) |> Myers<_>
-
-    static member ApplyDifferences(insert, delete, differences, state) =
+    let applyDifferences insert delete differences state =
         (fun c -> function
             | Insertion (i, element) -> insert i element c
             | Deletion i -> delete i c)
         |> Seq.fold <|| (state, differences)
-    static member Default = d

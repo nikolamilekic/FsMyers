@@ -10,14 +10,14 @@ let stringToMyersList (s : string) =
     { new IMyersList<_> with member __.Count = charArray.Length
                              member __.Item with get(x) = charArray.[x] }
 let getStringDifferences a b = (stringToMyersList a, stringToMyersList b)
-                               |> Myers.Default.GetDifferences
+                               ||> Myers.getDifferences obj.Equals
                                |> Async.RunSynchronously
 
 let insert i e (l : ResizeArray<_>) = l.Insert(i, e); l
 let delete i (l : ResizeArray<_>) = l.RemoveAt i; l
 
 let testApplication (a : string) b differences =
-    Myers.ApplyDifferences(insert, delete, differences, (a.ToList())).ToArray()
+    (Myers.applyDifferences insert delete differences (a.ToList())).ToArray()
     |> System.String = b
 
 let testCountAndApplication a b expectedCount =
